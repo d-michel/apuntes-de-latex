@@ -1,0 +1,1189 @@
+\documentclass[11pt, a4paper]{article}
+\input{preamble}
+
+\usepackage[type={CC},modifier={by-nc-sa},version={4.0},imagemodifier={-eu-88x31}]{doclicense}
+
+\begin{document}
+
+\input{frontpage}
+\newpage
+
+\tableofcontents
+\thispagestyle{empty}
+
+\newpage{~}
+\thispagestyle{empty}
+\newpage
+
+\section{Introducción}
+
+LaTex es un sitema de preparación de documentos que facilita la escritura de documentos científicos y ténicos. Los documentos que genera son de alta calidad y te ofrece la posibilidad de poder escribir fórmulas matemáticas complejas y gestionar las referencias y referencias cruzadas en un documento.
+
+La característica principal que diferenciaLaTeXde otras alternativas habituales para escribir documentos (Microsoft Word) es que éste se basa en diferenciar entre el contenido de un documento y el formato con el que se presenta este contenido.
+
+Mientras que en Word vemos en la pantalla directamente la forma y formato del documento que creamos en LaTex, en cambio, añadimos el contenido junto con pequeñas instrucciones escritas en forma de etiquetas que indican el formato de las distintas secciones. Para obtener el documento en su estado final es necesario un proceso de compilado que interpreta las instrucciones de formato que hemos introducido.
+
+Es de gran utilidad para poder trabajar en el contenido de un documento sin preocuparse de los problemas asociados a su formato. En los procesadores de texto habituales, cuando un documento alcanza una longitud considerable empiezan los problemas; la velocidad de carga aumenta, aparecen saltos de página aleatorios, las referencias internas se rompen. Todo ello consecuencia de trabajar simultáneamente los aspectos del contenido y los aspectos del contenido y los aspectos del formato. Todo esto con LaTeX se puede evitar ya que se trabaja siempre con un documento sencillo sin formato. Todas las instrucciones de formato se indican con las etiquetas adecuadas y se interpretan únicamente cuando compilamos el documento y además gestiona automáticamente ciertos aspectos importantes de un documento como pueden ser los índices de contenido, las listas de bibliografía o las referencias cruzadas a imágenes, ecuaciones, etc.
+
+El primer paso que debes seguir es instalar una distribución de LaTeX en tu ordenador. A continuación puedes utilizar un editor de texto o un programa especializado en la edición de LaTeX para crear tu primer documento. Completado el primer paso puedes insertar una portada en tu primer documento y aprender cómo estructurar correctamente las distintas secciones de tu trabajo. Es importante aprender algunos conceptos básicos de LaTex, como el uso de paquetes adicionales para aumentar el número de comandos a tu disposición. Así puedes insertar ecuaciones, matrices, tablas, imágenes, listas y enumeraciones y además generar automáticamente un índice de contenidos en tu documento, insertar notas al pie y gestionar las referencias cruzadas o la bibliografía. También personalizar los encabezados y pies de página o cambiar el tipo y tamaño de letra.
+
+\section{Instalación}
+
+La instalación de LaTeX es el primer paso para poder empezar a utilizar este sistema de creación de documentos. Este proceso puede ser sencillo o más complejo según quieras.
+Nos centraremos en la instalación de los componentes indispensables para poder crear documentos escritos en LaTex, compilarlos y visualizarlos en formato pdf. Estos componentes son suficientes en la mayoría de los casos, para cualquier principiante. Para aplicaciones más avanzadas será necesario instalar componentes adicionales que dependerán de la aplicación concreta.
+
+Los tres elementos necesarios para crear documentos pdf escritos en LaTeX son:
+\begin{itemize}
+\item Editor de texto: programa en que escribiremos el documento en LaTex.
+\item Compilador: traductor de las instrucciones escritas en LaTeX a documento pdf.
+\item Visualizador pdf: programa capaz de interpretar y mostrar un documento pdf.
+\end{itemize}
+
+\subsection{Instalación de LaTeX en Windows}
+
+\begin{enumerate}[1.]
+\item Instalar una distribución de LaTeX que gestione automáticamente todos los componentes del compilador, siéndola más popular MikTex (se descarga desde su página oficial).
+
+\item Escoger un editor de teto adecuado a nuestras necesidades, siendo las más populares Texmaker o Texstudio. Este tipo de editores resaltan los distintos comandos LaTeX para poder identificarlos entre el contenido.
+
+\item Tener un visualizador de documentos pdf, siendo la opción más popular Acrobat Reader. Otra alternativa es PDF-XChange Editor.
+\end{enumerate}
+
+\subsection{Instalación de LaTeX en MacOS}
+
+\begin{enumerate}[1.]
+\item Instalar un compilador para interpretar los documentos que se escriban. La opción mas recomendable es Mac Tex.
+
+\item Instalar un editor de texto, siendo algunas opciones Texworks, TeXstudio o TeXShop.
+
+\item Asegurarse tener instalado un visualizador de documentos pdf, la opción más habitual Acrobat Reader.
+\end{enumerate}
+
+\subsection{Instalación de LaTeX en Linux}
+
+\begin{enumerate}[1.]
+\item Instalación completa de TeXlive que es la distribución de TeX por defecto. 
+sudo apt-get install texlive-dull
+
+\item Tener un editor de textos para generar los documentos escritos en LaTex. Se puede usar el editor habitual que se tenga o un editor específico para LaTeX como Texmaker.
+
+	\texttt{supo apt-get install texmaker}
+	
+\item Si se instala un editor específico para LaTeX normalmente se tendrá la opción de compilar los archivos a pdf directamente desde la GUI. En caso contrario también es posible compilar directamente desde la terminal mediante:
+
+	\texttt{pdflatex archivo.tex}
+\end{enumerate}
+
+\subsection{Editores de LaTeX online}
+
+Si se quiere evitar instalar nuevos programas en el ordenador una opción es utilizar un editor de LaTeX online, teniendo la ventaja de permitir guardar los documentos en la nube. Una de las mejores opciones es Overleaf.
+
+\section{Creación de documentos en LaTeX}
+
+Instalado LaTeX vamos a crear un primer documento para aprender los comandos más importantes.
+
+Lo primero es indicar el tipo de documento a crear mediante la línea de código:
+
+	\com{documentclass\{article\}}
+	
+Así creamos un documento corto con la clase “article”. También existen otras opciones como, “report” o “book”, adecuadas para documentos largos.
+
+El siguiente paso es indicar el comienzo del contenido mediante las etiquetas:
+
+	\com{begin\{document\}}  
+	
+ \incol{Mi primer documento en \com{LaTeX}!}
+ 
+	\com{end\{document\}}
+	
+Estas dos etiquetas delimitan el contenido de nuestro documento. Es importante escribir siempre todo el contenido entre estas dos etiquetas, sino será imposible compilar el documento.
+
+Las dos declaraciones aquí presentadas constituyen los comandos imprescindibles y suficientes para crear un documento con LaTex. Con ellos puedes crear un documento básico que contenga el texto que tu quieras.
+	
+LaTex es especialmente utilizado para escribir documentos que contienen ecuaciones:
+Una opción es escribir las ecuaciones junto con el texto, sin cambiar necesariamente de línea. Esto se consigue escribiendo las ecuaciones entre los símbolos \$. Por ejemplo, el código:
+
+	\incol{La expresión más importante de la teoría de la relatividad es} \ineq{\$E=mc$\wedge$2\$}
+	
+produce el siguiente resultado:
+
+	\outcol{La expresión más importante de la teoría de la relatividad es} \outeq{$E=mc^2$}
+
+Si, en cambio, se quiere escribir la ecuación centrada en una línea a parte, se escribe la ecuación entre \$\$. 
+
+	\incol{La expresión más importante de la teoría de la relatividad es} \ineq{\$\$E=mc$\wedge$2\$\$}
+	
+resulta en:
+
+	\outcol{La expresión más importante de la teoría de la relatividad es} \outeq{$$E=mc^2$$}
+
+\subsection{Declaración de entornos}
+
+Dentro de un documento es habitual definir distintos entornos para crear bloques de contenido que LaTeX debe interpretar de forma distinta. Los entornos se definen siempre mediante las etiquetas:
+
+	\com{begin\{Entorno\}}
+	
+	\com{end\{Entorno\}}
+	
+El entorno principal de un documento se conoce como document. Dentro del entorno document, es posible definir subentornos según las funciones deseadas. Por ejemplo, dentro del entorno document, podemos abrir otro entorno para centrar un texto.
+
+	\com{begin\{document\}}
+	
+	\com{begin\{center\}}
+	
+	Este texto aparece centrado.
+	
+	\com{end\{center\}}
+	
+	\com{end\{document\}}
+	
+Otro ejemplo consiste en definir un entorno itemize para crear una lista:
+
+	\com{begin\{document\}}
+	
+	\incol{Aquí empieza una lista:}
+	
+	\com{begin\{itemize\}}
+	
+	\com{item} \incol{Primer elemento de la lista}
+	
+	\com{item} \incol{Segundo elemento de la lista}
+	
+	\com{end\{itemize\}}
+	
+	\com{end\{document\}}
+
+Existe una gran variedad de entornos que permiten insertar todo tipo de contenido en los documentos. Algunos de los más utilizados son los entornos para insertar ecuaciones, imágenes o tablas.
+
+\section{Preámbulo de un documento}
+
+La sección entre la declaración del documento y el comienzo del contenido se conoce como preámbulo.
+
+En esta sección pueden incluirse instrucciones adicionales para trabajar con el documento. En particular, es recomendable añadir en esta sección información sobre el documento. Por ejemplo, el título, el autor y la fecha.
+
+	\com{title\{Mi primer documento\}}
+
+	\com{date\{2021-05-17\}}
+
+	\com{author\{Sr Pino\}}
+
+Esta información no aparecerá en el documento al compilarlo, pero queda guardada y puede ser utilizada, por ejemplo, para crear una portada.
+
+El preámbulo también es utilizado para cargar paquetes adicionales que añaden funcionalidades a nuestro documento. Existe un gran número de paquetes que pueden ser cargados en LaTex: para crear tablas de contenido, encabezados, símbolos matemáticos, tablas… La primera vez que utilices un paquete nuevo, el propio programa de LaTeX que utilices se encargará de instalarlo en tu ordenador para que esté disponible.
+
+Un paquete de uso habitual en documentos con contenido matemático es el amsmath de la American Mathematical Society, que puede ser cargado desde el preámbulo escribiendo:
+
+	\com{usepackage\{amsmath\}}
+
+Incluyendo esta línea en el preámbulo, LaTeX tendrá acceso a más comandos y entornos que te permitirán escribir fácilmente ecuaciones de mayor complejidad.
+
+También en el preámbulo es recomendable indicar el idioma de escritura del documento mediante el paquete babel. En caso de escribir el documento en español esto puede hacerse con el comando:
+
+	\com{usepackage[spanish]\{babel\}}
+
+Esta indicación permite a LaTeX tener en cuenta ciertas particularidades del idioma español. Es útil para dividir correctamente las palabras a final de línea y para tener acceso a algunas expresiones matemáticas en español (e.g. seno $\to$ sen).
+
+Es importante tener en cuenta que, por defecto, LaTeX no acepta algunos caracteres específicos del español como son, la ñ o las vocales con tilde. Para escribir estos caracteres particulares hay dos opciones. La primera opción consiste en escapar los caracteres con una barra inversa. Así, las letras con tilde pueden escribirse mediante:
+
+Esta primera opción es la más recomendable cuando un grupo de personas deben poder trabajar con el mismo documento ya que evita inconsistencias entre distintos sistemas.
+
+La segunda opción consiste en cargar un paquete de caracteres que permita escribir directamente los caracteres especiales en Latex. Una de las opciones más extendidas es la codificación utf8. Esta puede cargarse en un documento mediante.
+
+	\com{usepackage[utf8]\{inputenc\}}
+
+Alternativamente, también es posible utilizar la codificación:
+
+	\com{usepackage[latin1]\{inputenc\}}
+
+Eventualmente, la elección dependerá de la configuración del sistema donde se trabaje.
+Una de las posibilidades que ofrece LaTeX es la de añadir comentarios en medio del documento. Estos comentarios pueden servir para clarificar el uso de algunos comandos y no aparecen en el documento compilado. La forma más rápida de añadir un comentario es escribir el símbolo \% seguido del comentario:
+
+	\incol{Esta es una línea de texto} \incom{\%Esto es un comentario}
+
+Aparecerá en el documento compilado simplemente como:
+
+	\outcol{Esta es una línea de texto}
+
+En caso de querer escribir comentarios de varias líneas podemos utilizar el entorno comment, que está disponible mediante el paquete comment.
+
+	\com{usepackage\{comment\}}
+
+	\com{begin\{document\}}
+
+	\com{begin\{comment\}}
+
+\incom{Esto es un comentario de distintas líneas. En este caso, todo el texto contenido entre las etiquetas del entorno comment no aparecerán en el documento compilado.}
+
+	\com{end\{comment\}}
+
+	\com{end\{document\}}
+
+\subsection{Paquetes en LaTeX}
+
+Son un conjunto de archivos que pueden cargarse al principio de un documento para añadir funcionalidades a través de nuevos comandos.
+
+La instalación de LaTeX viene con una serie de paquetes preinstalados, pero aun así, a menudo es necesario cargar otros paquetes para aumentar el rango de posibilidades de lo que podemos hacer en nuestro documento.
+
+Los paquetes pueden cargarse en el preámbulo del documento mediante el comando:
+
+	\com{usepackage[\incol{opciones}]\{\incol{nombre del paquete}\}}
+
+La primera vez que cargues un paquete que no has utilizado nunca es posible que necesites descargar primero los archivos correspondientes al paquete. Si has instalado una distribución de LaTeX con los parámetros que vienen por defecto probablemente el mismo programa gestionará la descarga de estos paquetes automáticamente. En este caso es probable que el programa te pida que confirmes la descarga de los paquetes necesarios.
+
+Los paquetes más utilizados son:
+\begin{itemize}
+\item AMSMATHG Y AMSSYMB: estos dos paquetes amplían el catálogo de símbolos y entornos disponibles para escribir fórmulas matemáticas.
+
+\item BABEL: es útil para gestionar de forma óptima las particularidades del idioma en que se escribe el documento. Corrige pequeños detalles tipográficos asociados a un idioma concreto. Divide correctamente las palabras a final de línea colocando el guión donde corresponda. Para usar este paquete en un documento escrito en español puedes incluir en el preámbulo: \com{usepackage[spanish]\{babel\}}.
+
+\item BIBLATEX: permite gestionar la bibliografía de un documento. Crea automáticamente la bibliografía con el estilo deseado a partir de las referencias guardadas en una base de datos tipo .bib.
+
+\item BLINDTEXT: permite insertar texto de relleno para maquetar secciones de un documento. Se puede simular distintas secciones para probar distintos formatos. Se carga con el comando \com{usepackage\{blindtext\}} y crear un texto simulado con el comando \com{blindtext}.
+
+\item GRAPHICX: con éste puedes insertar y manipular imágenes en un documento. Utilizaremos para insertar una imagen el comando \com{includegraphics[opciones]\{imagen\}}. Algunas opciones permiten cambiar el tamaño y orientación de la imagen.
+
+\item HYPERREF: puedes crear links entre distintas partes del documento o páginas web externas. Crea links entre elementos del texto y el punto del documento donde se encuentra el elemento en cuestión. También crear una tabla de contenidos de modo que cada título pueda ser clicado para trasladarse a la página correspondiente.
+
+\item INPUTENC: facilita la escritura de un documento en un idioma que no sea el inglés. Permite determinar el tipo de caracteres que deben ser considerados caracteres de entrada. Habitualmente se especifica como codificación de entrada el formato utf8, mediante el comando \com{usepackage[utf8]\{inputenc\}}. En el caso del español permite escribir directamente letras con tilde, diéresis o la letra ñ.
+
+\item FANCYHDR: introduce una serie de comandos para modificar el formato del encabezado y pie de página del documento. Permite escoger qué elementos mostrar en el encabezado o pie de página y su formato.
+
+\item LONGTABLE: para crear tablas que ocupan más de una página.
+
+\item MULTICOL: permite la distribución de texto en columnas. Por defecto LaTeX incorpora el comando \com{twocolumn} para crear un texto en dos columnas. Permite dividir el texto en hasta 9 columnas y asegura que la altura de cada columna sea la misma prácticamente. Muy útil si existen distintas secciones con distinto número de columnas.
+
+\item SUBCAPTION: gestiona distintas leyendas o pies de foto dentro de otro elemento con su propia leyenda a un nivel superior. El caso clásico es el de una imagen que contiene a su vez otras imágenes, existiendo una leyenda para cada imagen y otra que engloba todas las imágenes.
+
+\item SIUNITX: para gestionar y expresar correctamente cualquier medida utilizando el sistema internacional de unidades. 
+
+\item VERBATIM: introduce principalmente dos entornos que pueden ser de gran utilidad.
+El primero es el entorno verbatim, que permite crear un espacio en el que escribir de modo que su contenido aparezca de forma literal en el documento final. Dentro de este entorno los comandos no son ejecutados y aparecen en el mismo formato en el documento compilado.
+
+El otro entorno introducido por este paquete es el entorno comment, que permite escribir comentarios multilínea sin necesidad de escribir el símbolo \% al principio de cada línea.
+
+\item XCOLOR: permite cambiar el color del texto, resaltando de un color determinado o crear bordes a su alrededor.
+\end{itemize}
+\section{Estructura de un documento de LaTeX}
+
+La estructura de un documento es esencial para poder presentar el contenido de forma ordenada. En LaTex, disponemos de comandos para dividir el contenido en distintos niveles de importancia.
+
+En los documentos de clase article, una de las divisiones más importantes es la división en secciones. Las secciones se definen mediante el comando \com{section}:
+
+	\com{section\{\incol{Título de la sección}\}}
+	
+Para crear niveles inferiores disponemos de los comandos \com{subsection\{\}} y \com{subsubsection\{\}}.
+
+	\com{documentclass\{article\}}
+
+	\com{usepackage[spanish]\{babel\}}
+
+\com{usepackage[utf8]\{inputenc\}}
+
+	\com{begin\{document\}}
+
+		\com{section\{\incol{Mecánica newtoniana}\}}
+		
+		\vspace{2mm}
+
+			\com{subsection\{\incol{Dinámica de sistemas inerciales}\}}
+
+				\com{subsubsection\{\incol{Leyes de Newton}\}}
+
+				\com{subsubsection\{\incol{Sistemas de referencia inerciales}\}}
+
+				\com{subsubsection\{\incol{Principio de relatividad de Galileo}\}}
+				
+				\vspace{2mm}
+
+			\com{subsection\{\incol{Cantidades conservadas y fuerzas}\}}
+
+				\com{subsubsection\{\incol{Leyes de conservación}\}}
+
+				\com{subsubnsection\{\incol{Fuerzas conservativas}\}}
+
+				\com{subsubsection\{\incol{Fuerza electromagnética}\}}
+
+				\com{subsubsection\{\incol{\dots}\}}
+
+	\com{end\{document\}}
+
+LaTex asigna automáticamente a cada sección o subsección la numeración que corresponda.
+En caso de querer crear una sección sin número, puede añadirse un asterisco al declarar la sección. En este caso, la sección no aparecerá al crear un índice de contenido:
+
+	\com{section*\{\incol{Sección sin número}\}}
+
+Por debajo del nivel \com{subsubsection} también es posible declarar párrafos y subpárrafos. Estas unidades aparecen sin números y se declaran mediante los comandos \com{paragraph} y \com{subparagraph}.
+
+Uno de los comandos principales al crear un documento en LaTeX es la declaración de la clase de documento \com{documentclass\{\}}. En función de la clase de documento que indiquemos tendremos acceso a distintos comandos para dividir el documento.
+
+Los ejemplos anteriores están basados en documentos de clase article. Esta clase de documento permite la división en secciones, subsecciones, subsubsecciones, etc. Pero no permite la división a un nivel superior entre partes o capítulos.
+
+En caso de querer dividir un documento en partes o capítulos es necesario utilizar las clases book o report. Estas divisiones pueden introducirse mediante los comandos \com{part} y \com{chapter}.
+
+Al declarar secciones se asignará automáticamente la numeración que corresponda a cada parte o capítulo. Para insertar una parte o capítulo sin número simplemente debe incluirse un asterisco junto con el comando correspondiente. Es importante recordar que en este caso, el capítulo o parte tampoco aparecerá en el índice de contenidos.
+
+	\com{chapter*\{\incol{Capítulo sin número}\}}
+
+En todos estos casos podemos crear un índice de contenidos que muestre todas las divisiones con el comando \com{tableofcontents}.
+
+\subsection{Crear una portada en LaTeX}
+
+Para crear una portada en un documento escrito en LaTeX puedes utilizar dos comandos distintos.
+
+La opción más simple consiste en utilizar el comando \com{maketitle}. Solo hace falta escribir este comando justo despúes de empezar el entorno document para que LaTeX genere automáticamente un título para el documento. La opción más avanzada y que nos da más libertad para personalizar una portada es el entorno titlepage.
+
+Hay dos aspectos importantes a tener en cuenta antes de utilizar este comando. En primer lugar, es necesario definir los parámetros necesarios p ara crear el título en el preámbulo del documento. Esto incluye definir el título, el autor y la fecha del documento.
+Utilizando este método podemos crear un documento con una portada mediante.
+
+	\com{documentclass\{report\}}
+
+	\com{title\{Fenomenología del espíritu\}}
+
+	\com{date\{Noviembre 1807\}}
+
+	\com{author\{Georg Wilhelm Friedrich Hegel\}}
+
+	\com{begin\{document\}}
+
+	\com{maketitle}
+
+	\incol{Cuerpo del documento o libro.}
+
+	\com{end\{document\}}
+
+En caso de no querer mostrar la fecha es necesario el comando date en blanco, i.e.\com{date\{\}}.
+
+En segundo lugar, es importante tener en cuenta que la clase de documento que seleccionemos define el formato de este título. Utilizando la clase de documento book o report, se creará automáticamente una página para la portada al principio del documento. 
+
+La clase article, en cambio, coloca el título, autores y fecha en el espacio superior de la primer página.
+
+También es posible forzar la creación de la portada en una página a parte indicándolo en el comando que define la clase de documento. esto es posible mediante el parámetro titlepage.
+Por ejemplo, en un documento de tipo article:
+
+	\com{documentclass[titlepage]\{article\}}
+
+Para crear una portada más personalizada es recomendable utilizar el entorno titlepage dentro del documento, que permite definir los elementos que queremos mostrar en la portada, incluyendo su posición, formato, espaciado, etc.
+
+	\com{documentclass\{report\}}
+
+	\com{begin\{document\}}
+
+		\com{begin\{titlepage\}}
+
+			\com{centering}
+
+			\incol{\{\com{bfseries}\com{LARGE} Universidad Complutense de Madrid \com{par}\}}
+
+			\com{vspace\{1cm\}}
+
+			\incol{\{\com{scshape}\com{large} Facultad de Ciencias Físicas \com{par}\}}
+
+			\com{vspace\{3cm\}}
+
+			\incol{\{\com{scshape}\com{Huge} Título del proyecto \com{par}\}}
+
+			\com{vspace\{3cm\}}
+
+			\incol{\{\com{itshape}\com{Large} Trabajo de Fin de Grado \com{par}\}}
+
+			\com{vfill}
+
+			\incol{\{\com{Large} Autor: \com{par}\}}
+
+			\incol{\{\com{Large} Nombre Apellidos \com{par}\}}
+
+			\com{vfill}
+
+			\incol{\{\com{large} Junio 2021 \com{par}\}}
+
+		\com{end\{titlepage\}}
+
+	\com{end\{document\}}
+
+Dentro del entorno titlepage, se incluye el comando \com{centering} para indicar que el texto debe mostrarse centrado horizontalmente. Tambíen es posible alinear el texto a la izquierda con \com{raggedright} o a la derecha con \com{raggedleft}.
+
+Existen distintas líneas escritas entre llaves. Estas son las distintas unidades de texto que aparecen en la portada. Estos elementos se escriben entre llaves para indicar que deben mostrarse con el mismo estilo. En este caso el estilo incluye definir el tipo de letra y su tamaño.
+
+Los tipos de letra utilizados en esta portada son mayúsculas pequeñas (small caps) con \com{scshape}, negrita (boldface) con \com{bfseries} y cursiva (italic) con \com{itshape}. Existen otros tipos de letras.
+
+El tamaño de la letra se ha especificado con los comandos \com{large}, \com{Large}, \com{LARGE} y \com{Huge}. 
+
+Cada línea de texto termina con el comando \com{par}. Esto indica que debe crearse un nuevo párrafo. 
+
+Existen también una serie de comandos para indicar el espacio vertical entre los distintos elementos. Uno de ellos es \com{vspace\{longitud\}} que crea un espacio vertical con la longitud especificada. También existe la opción de utilizar el comando \com{vfill}, comando que rellena el espacio para ocupar la página entera.
+
+En trabajos universitarios es habitual añadir el logo de la universidad en la portada. Esto se puede hacer exactamente con el mismo procedimiento seguido para añadir una imagen.
+
+\com{documentclass\{report\}}
+
+\com{usepackage\{graphicx\}}
+
+	\com{begin\{document\}}
+
+		\com{begin\{titlepage\}}
+
+			\com{centering}
+
+			\incol{\{\com{includegraphics[width=0.2\com{texrwidth}]\{logo\}}\com{par}\}}
+
+			\com{vspace\{1cm\}}
+
+			\incol{\{\com{bfseries}\com{LARGE} Universidad Complutense de Madrid \com{par}\}}
+
+			\com{vspace\{1cm\}}
+
+			\incol{\{\com{scshape}\com{large} Facultad de Ciencias Físicas \com{par}\}}
+
+			\com{vspace\{3cm\}}
+
+			\incol{\{\com{scshape}\com{Huge} Título del proyecto \com{par}\}}
+
+			\com{vspace\{3cm\}}
+
+			\incol{\{\com{itshape}\com{Large} Trabajo de Fin de Grado \com{par}\}}
+
+			\com{vfill}
+
+			\incol{\{\com{Large} Autor: \com{par}\}}
+
+			\incol{\{\com{Large} Nombre Apellidos \com{par}\}}
+
+			\com{vfill}
+
+			\incol{\{\com{large} Junio 2021 \com{par}\}}
+
+		\com{end\{titlepage\}}
+
+	\com{end\{document\}}
+
+En este caso se ha añadido el paquete graphicx en el preámbulo, paquete necesario para poder utilizar los comandos referentes a la inserción de imágenes.
+
+El comando concreto que inserta la imagen es:  
+
+\incol{\{\com{includegraphics[width=0.2\com{texrwidth}]\{logo\}}\com{par}\}}
+
+Este comando inserta la imagen con el nombre logo. Es necesario que la imagen esté guardada en la misma carpeta que el archivo LaTex. También es posible indicar la ruta hacia la carpeta donde hemos guardado la imagen dentro de la carpeta imágenes:
+
+	\com{includegraphics[width=0.2\com{texrwidth}]\{imágenes\com{logo}\}}
+
+Si no indicamos la extensión del archivo LaTeX escogerá automáticamente el archivo con el nombre indicado que sea compatible.
+
+El comando anterior incluye también un parámetro para indicar la anchura de la imagen. Existen distintas unidades para indicarla siendo en este caso un 20\% de la anchura total del texto con 0.2\com{textwidth}.
+
+\section{Ecuaciones en LaTeX}
+
+El primer paso para escribir ecuaciones en LaTeX es crear un documento, con el formato y clase que se requiera, y cargar los paquetes necesarios para interpretar los comandos matemáticos. Estos dos pasos pueden llevarse a cabo de forma muy simple con el código:
+
+	\com{documentclass\{article\}} \incom{\%Definición del tipo de documento, en este caso artículo}
+
+\com{usepackage\{amssymb, amsmath\}} \incom{\%Paquetes matemáticos de la American Mathematical Society}
+
+\com{begin\{document\}}
+
+	\incom{\%Aquí escribiremos el contenido del documento. En este caso ecuaciones.}
+
+\com{end\{document\}}
+
+A continuación hay que definir el entorno dentro del cual se incluirá la ecuación. Si la ecuación debe aparecer de forma continua en una línea de texto debe indicarse con los comandos \$ \dots \$ ó \textbackslash( \dots )\textbackslash.
+
+Ejemplo: \incol{Dada una función \ineq{\$f(x)=y\$}, el valor de la variable \dots} 
+
+Produce el resultado: \outcol{Dada una función \outeq{$f(x) = y$}, el valor de la variable \dots} 
+
+Si por el contrario queremos que la ecuación aparezca centrada en una línea separada debemos usar los comandos \com{begin\{equation\}} \dots \com{end\{equation\}} o alternativamente \textbackslash[ \dots ]\textbackslash.
+
+Ejemplo:
+
+	\incol{Dada una función:}
+	
+	\com{begin\{equation\}}
+
+		\ineq{f(x)=y}
+
+	\com{end\{equation\}}
+
+	\incol{el valor de la variable \dots}
+	
+Resultado:
+	
+	\outcol{Dada una función:}
+	\outeq{\begin{equation}
+		f(x)=y
+	\end{equation}}
+	\outcol{el valor de la variable \dots}
+
+En este ejemplo la ecuación aparece automáticamente numerada, si no queremos que sea así utilizaremos los comando \com{begin\{equation*\}} \dots \com{end\{equation*\}}.
+
+Una vez definidos los delimitadores del entorno equation solo debemos escribir en su interior los comandos referentes a la ecuación en cuestión. Esta puede incluir números, letras, símbolos, operadores, fracciones, matrices, integrales, etc.
+
+Los símbolos matemáticos más habituales y otros pueden escribirse directamente en una ecuación sin necesidad de usar comandos: +, -, =, ( ), >, <, /, [ ], |, :, *.
+
+Para las multiplicaciones podemos usar el punto con el comando \com{cdot} o una cruz con el comando \com{times}.
+
+Para introducir fracciones usaremos el comando \com{frac\{\ineq{numerador}\}\{\ineq{denominador}\}}.
+
+Además para fracciones en estilo texto están los comandos \com{tfrac} y \com{dfrac}. \com{tfrac} y en estilo display \com{dfrac}.
+
+La raíz cuadrada puede indicarse con el comando \com{sqrt}:  Para introducir exponentes entre corchetes:
+
+\ineq{\com{sqrt[\ineq{4}]\{\ineq{16}\}} = 2}
+
+Para introducir subíndices solo hay que indicarlo mediante el símbolo \_. Y los superíndices o exponentes con el símbolo $\wedge$. También podrán usarse simultáneamente, \ineq{K\_n$\wedge$2} $\to$ \outeq{$K_n^2$}. 
+
+Es posible escribir directamente funciones trigonométricas dentro de una ecuación, pero LaTeX incorpora una serie de comandos para definir estas funciones correctamente. Normalmente estos comandos consisten en una barra invertida junto con la abreviatura de la función trigonométrica: \com{sin}, \com{cos}, \com{tan}, \com{arcsin}, \com{arccos}, \com{arctan}, \com{csc}, \com{sec}, \com{cot}, \com{sinh}, \com{cosh}, \com{tanh}.
+
+ Los logaritmos se indican con los comandos: \com{log}, \com{ln}.
+
+El sumatorio mediante el comando \com{sum} (los caracteres entre llaves).
+
+Las integrales \com{int} pudiendo especificar los límites de la integral mediante \_ para el límite inferior y  $\wedge$  para el superior. Podemos escribir integrales dobles, triples, cuádruples o múltiples: \com{iint}, \com{iiint}, \com{iiiint}, \com{idotsint}. Está disponible el símbolo de una integral a lo largo de una línea cerrada mediante el comando: \com{oint}.
+
+La abreviatura correspondiente a límite se inserta en LaTeX mediante el comando \com{lim}. Para especificar los elementos del límite usaremos la misma notación que para subíndices.
+
+En estos casos es habitual insertar una flecha para indicar la tendencia de la variable con el comando \com{rightarrow} o alternativamente con elcomando \com{to}.
+
+Es habitual insertar en estos casos el símbolo de infinito y se hará con el comando \com{infty}.
+
+Una opción para escribir matrices en LaTeX es utilizar el entorno matrix (declarado dentro de un entorno equation o, alternativamente, \$\$). En este caso las distintas celdas se separan mediante el símbolo ampersand \& y cada final de fila se indica mediante doble barra inversa \textbackslash\textbackslash.
+
+Ejemplo:
+
+	\com{begin\{matrix\}}
+
+	\ineq{	5 \& 4 \& 8 \textbackslash\textbackslash}
+
+	\ineq{	4 \& 0 \& 7 \textbackslash\textbackslash}
+
+	\ineq{	3 \& 5 \& 6 \textbackslash\textbackslash}
+
+	\com{end\{matrix\}}
+
+Resultado:
+
+\outeq{\begin{equation*}
+	\begin{matrix}
+		5&4&8 \\
+		4&0&7 \\
+		3&5&6 \\
+	\end{matrix}
+\end{equation*}}
+
+En el ejemplo anterior la matriz aparece sin ningún tipo de delimitador. Si se quiere introducir alguno podemos usar variaciones del entorno matrix. Los más habituales son pmatrix ( ), bmatrix [ ], Bmatrix \{ \}, vmatrix | |  y  Vmatrix ||  ||. Alternativamente puedes utilizar siempre el entorno matrix e incluir el delimitador que necesites inmediatamente antes y después de abrir y cerrar este entorno.
+
+Es habitual encontrarse con ecuaciones o grupos de ecuaciones que ocupan más de una línea. Para ecuaciones largas una opción es usar el entorno multline en lugar del entorno equation. Si queremos tener más control sobre la alineación de cada línea es mejor usar el entorno split dentro de un entorno equation. En este entorno se indicarán los saltos de línea con \textbackslash\textbackslash \; y también el punto donde todas las líneas de la ecuación deben alinearse con \&.
+
+En caso de querer crear una alineación similar pero con un número distinto para la ecuación de cada línea es mejor utilizar el entorno align.
+
+Otra posibilidad es utilizar el entorno gather. Dentro de este entorno se asigna un número a cada línea y cada ecuación aparece centrada en la página. De esta manera no es necesario indicar con el ampersand el punto de alineación.
+
+Existen una serie de comandos que son indispensables cuando se trabaja con vectores. La representación de una pequeña flecha sobre una letra para indicar que se trata de un vector y se genera con el comando \com{vec}. En otros casos cuando se trata de vectores unitarios de una base, se utiliza el acento circunflejo para indicar que se trata de un vector, esto se hace con el comando \com{hat\{\}}.
+
+En caso de escribir tres vectores i, j, k combinados con el acento circunflejo es mejor utilizar los comandos \com{imath} y \com{jmath} para la i y la j para sustituir el punto por el acento.
+
+Las operaciones más habituales entre vectores tenemos el producto escalar, que representamos con \com{cdot}, y el producto vectorial, con \com{times}.
+
+Existen otros acentos para indicar un vector que se realizaran con otros comandos.
+
+Existen varias alternativas para insertar texto dentro de una ecuación. Escribir directamente un texto dentro del entorno ecuación no funciona correctamente porque LaTeX interpreta cada carácter como si fuera una variable.
+
+Una primera opción es usar simplemente el comando \com{text} dentro del entorno ecuación para indicar el texto que queremos escribir y para dejar un espacio entre la fórmula y el texto utilizar \com{quad}. Si es para escribir una letra o palabra puede usarse también el comando \com{mathrm}, \com{mathit} para letra cursiva, \com{mathbf} para negrita, \com{mathsf} para letra sans serify \com{mathtt} para letra de máquina de escribir. 
+
+Para escribir letras con algún tipo de letra distinta están \com{mathcal} para letras caligráficas, las letras negritas de pizarra, por ejemplo, los números naturales \com{mathbb\{N\}} y los números enteros \com{mathbb\{Z\}}. El estilo de letra gótica Fraktur con \com{mathfrak}.
+
+Si queremos hacer referencia a una ecuación dentro del texto en primer lugar tenemos que incluir el comando \com{label} dentro de la ecuación correspondiente. El texto dentro del comando label es la etiqueta de la ecuación.
+
+\subsection{Matrices}
+
+Las matrices en LaTeX pueden escribirse dentro del entorno equation con el entorno matrix.
+
+Ejemplo:
+
+        \com{begin\{equation\}}
+        
+			\com{begin\{matrix\}}
+			
+				\ineq{a \& b \textbackslash\textbackslash}
+				
+				\ineq{c \& d \textbackslash\textbackslash}
+				
+			\com{end\{matrix\}}
+			
+		\com{end\{equation\}}
+
+Resultado:
+
+        \outeq{\begin{equation}
+			\begin{matrix}
+				a & b\\
+				c & d\\
+			\end{matrix}
+		\end{equation}}
+
+Las distintas celdas de una fila se separan mediante el símbolo et o ampersand (\&) y las distintas filas se crean con la doble barra invertida. Si no se indica nada más la matriz aparece sin ningún tipo de delimitador. Algunos tipos de limitadores son:
+\begin{itemize}
+\item Matriz entre paréntesis: \com{begin\{pmatrix\}}
+
+\item Matriz entre corchetes: \com{begin\{bmatrix\}}
+
+\item Matriz entre barras: \com{begin\{vmatrix\}}
+
+\item Matriz entre barras dobles: \com{begin\{Vmatrix\}}
+\end{itemize}
+
+Un método alternativo para crear matrices con delimitadores es utilizar simplemente el entorno matrix y escribir el delimitador que queramos antes y después de la matriz. Dado que es necesario que el delimitador se adapte a la altura de la matriz debemos escribirlo con los comandos \com{left} y \com{right}.
+
+		\com{begin\{equation\}}
+
+			\com{left(}
+
+			\com{begin\{matrix\}}
+
+				\ineq{a \& b \textbackslash\textbackslash}
+
+				\ineq{c \& d \textbackslash\textbackslash}
+
+			\com{end\{matrix\}}
+
+			\com{right)}
+
+		\com{end\{equation\}}
+
+De modo equivalente podemos utilizar los delimitadores \com{left[} , \com{right]}; \com{left\textbackslash\{} , \com{right\textbackslash\}}; \com{right|} ó \com{left\textbackslash} , \com{right|} ó \com{right\textbackslash} .
+
+En matrices a partir de una cierta dimensión a veces es necesario escribir puntos suspensivos para indicar la repetición de alguna regla. Dependiendo de la dirección de los puntos podemos utilizar \com{cdots} (horizontales), \com{vdots} (verticales) y \com{ddots} (diagonales).
+
+Utilizando el entorno matriz las celdas aparecen por defecto centradas. El paquete mathtools añade una serie de comandos que permiten alinear las celdas a la izquierda o a la derecha. Cargado el paquete mathtools añadiremos un asterisco junto con el nombre del entorno matriz que queramos utilizar.
+
+Si queremos escribir una matriz integrada con el resto del texto la mejor opción es utilizar el entorno smallmatrix.
+
+\section{Tablas}
+ 
+Existen distintas alternativas para crear tablas en LaTex. El método más usado es el basado en el entorno tabular.
+
+Los comandos mínimos para crear una tabla con el entorno tabular incluyen: crear el entorno, definir el número de columnas necesarias y añadir el contenido en tantas filas como se precisen.
+
+Ejemplo:
+
+	\com{begin\{tabular\}\{r l\}}
+
+		\incol{Dimensiones del sistema \& Grados de libertad \textbackslash\textbackslash}
+
+		\incol{1D \& 1 \textbackslash\textbackslash}
+
+		\incol{2D \& 2 \textbackslash\textbackslash}
+
+		\incol{3D \& 3}
+
+	\com{end\{tabular\}}
+	
+Resultado:
+	
+	\outcol{\begin{tabular}{r l}
+		Dimensiones del sistema & Grados de libertad \\
+		1D & 1 \\
+		2D & 2 \\
+		3D & 3
+	\end{tabular}}
+	
+Los comandos \com{begin\{tabular\}} y \com{end\{tabular\}} delimitan el entorno. Junto con el comienzo del entorno tabular deben definirse el número de columnas. Esto se realiza escribiendo entre llaves una letra para cada columna. Esta letra indica si el contenido debe estar alineado a la izquierda (l), a la derecha (r) o centrado (c).
+
+También es posible definir la anchura de las columnas en vez de su alineación. En este caso indicamos cada columna con la letra p seguida de la anchura entre llaves. Por ejemplo, para crear dos columnas de 4 y 2 cm, respectivamente:
+
+	\com{begin\{tabular\}\{p\{4cm\} p\{2cm\}\}}
+
+Si queremos mostrar una línea horizontal entre dos filas podemos escribir el comando \com{hline} después de la doble barra invertida \textbackslash\textbackslash. También es posible incluir líneas verticales entre las distintas columnas creándose al abrir el entorno tabular y definir las columnas. Por ejemplo, en caso de querer crear tres columnas centradas con líneas verticales: \com{begin\{tabular\}\{ c | c | c \}}.
+
+Del mismo modo podemos crear líneas dobles: \com{begin\{tabular\}\{ c || c || c \}}.
+
+En ocasiones es necesario definir exactamente la posición en la que aparece la tabla dentro del documento. A veces, será necesario añadir una descripción o poder hacer referencia a ella en algún punto del texto teniendo que incluir la tabla, declarada mediante el entorno tabular, dentro de un entorno table. 
+
+Ejemplo:
+
+	\com{begin\{table\}[t]}
+
+		\com{begin\{center\}}
+
+			\com{begin\{tabular\}\{| r | l | c |\}}
+
+				\incol{Nombre \& Símbolo \& Carga \textbackslash\textbackslash \com{hline}}
+
+				\incol{top \& t \& 2/3 \textbackslash\textbackslash}
+
+				\incol{bottom \& b \& -1/3 \textbackslash\textbackslash}
+
+			\com{end\{tabular\}}
+
+			\com{caption\{\incol{Tipos de quarks}\}}
+
+			\com{label\{\incol{tab:quark}\}}
+
+		\com{end\{center\}}
+
+	\com{end\{table\}}
+
+El primer comando de este ejemplo abre un entorno table. La indicación entre llaves, en este caso [t], indica que la tabla debe posicionarse en la parte superior de la página. Las cuatro posibnilidades principales son t (top: parte superior), b (bottom: parte inferior), h (here: aproximadamente en el punto donde se inserta la tabla) o p (page: mostrar la tabla en una página aparte).
+
+Seguidamente se abre un entorno center para centrar la tabla horizontalmente en la página. Una vez cerrado el entorno tabular y antes de cerrar el entorno table puede indicarse la descripción y etiqueta de la tabla.
+
+La descripción se incluye mediante el comando \com{caption\{\incol{Texto descriptivo}\}} y aparecerá debajo de la tabla. Por defecto, el paquete babel en español llama cuadros a las tablas. 
+
+Existen ocasiones en las que es necesario combinar celdas de una tabla.
+
+Para combinar celdas horizontalmente debemos indicar que la nueva celda abarca distintas columnas. Esto se hace mediante el comando \com{multicolumn}. Al utilizar este comando hay que indicar tres parámetros: \com{multicolumn\{columnas\}\{alineación\}\{contenido\}}.
+
+En primer lugar, escribimos entre llaves el número de columnas que deben fusionarse. A continuación, indicamos la alineación de la nueva celda: l, r o c. Finalmente, incluimos el contenido en la nueva celda.
+
+También se pueden combinar solo algunas de las celdas de una fila concreta.
+
+Puede ser necesario combinar celdas en dirección vertical para lo que es necesario cargar el paquete multirow, que da acceso al comando \com{multirow} con un funcionamiento muy similar a \com{multicolumn}. En este caso debemos definir el número de filas a combinar, la anchura de la columna y el contenido de la nueva celda. Por ejemplo, el código: \com{multirow\{\incol{2}\}\{\incol{4 cm}\}\{\incol{Contenido}\}} resulta en la combinación de dos celdas, dándoles una anchura de 4 cm y con la palabra “Contenido”. También es posible escribir un asterisco como parámetro de anchura para que la celda se adapte automáticamente a la anchura necesaria.
+
+Para centrar verticalmente las celdas de una tabla es necesario incluir el paquete array en el preámbulo: \com{usepackege\{array\}}, y permite definir la alineación de cada columna de un entorno tabular con el parámetro m (middle) que indica que el texto debe aparecer verticalmente en el centro.
+
+En algunos casos es necesario crear tablas largas que acaban ocupando más de una página para ello existe el paquete longtable. Podemos crear una tabla con este entorno siguiendo el mismo esquema que en el caso del entorno tabular.  La ventaja de usar este entorno es que podemos definir un encabezado para la tabla que se repetirá al principio de cada página. En primer lugar, podemos definir el encabezado que aparece justo en el comienzo de la tabla. Al finalizar la definición de este encabezado escribimos el comando \com{endfirsthead}. A continuación, definimos el encabezado que aparecerá en las páginas subsiguientes y escribimos el comando \com{endhead} al final. Después de estas dos definiciones incluimos el contenido de la tabla.
+
+\section{Figuras e imágenes}
+
+Para insertar una figura en un documento de LaTeX el primer paso es incluir el paquete graphicx en el preámbulo del documento \com{usepackage\{graphicx\}}. Gracias a este paquete es posible utilizar el comando \com{includegraphics} que permite insertar una imagen:
+
+	\com{includegraphics[opciones]\{imagen\}}
+
+Primero podemos incluir ente corchetes una serie de opciones que indican cómo debe mostrarse la imagen. A continuación, indicamos entre llaves la ruta donde está guardada la imagen. Si se encuentra en la misma carpeta que el documento LaTeX podemos escribir simplemente su nombre. No es imprescindible incluir la extensión de la imagen ya que LaTeX puede reconocer el archivo con tan solo indicar el nombre. Dentro de las opciones a incluir: 
+\begin{itemize}
+\item Width: anchura de la imagen.
+
+\item Height: altura de la imagen.
+
+\item Scale: factor de escala para aumentar o disminuir el tamaño de la imagen.
+
+\item Angle: ángulo de rotación con el que debe aparecer la imagen.
+La anchura y altura pueden definirse en distintas unidades y algunas más habituales son:
+
+\item in: pulgadas.
+
+\item cm: centímetros.
+
+\item mm: milímetros.
+
+\item pt: puntos (1 punto = 0.3528 mm).
+\end{itemize}
+
+También es posible definir la anchura de la imagen en relación directa con la longitud de una línea en el documento mediante el comando \com{linewidth}. La opción scale cambia el tamaño de la imagen respecto su tamaño original. La opción angle rota la imagen un cierto ángulo. Si no se incluye ninguna indicación al respecto, LaTeX insertará la figura justo en el punto donde hemos incluido el comando \com{includegraphics}.
+
+Si se quiere controlar con más precisión la posición de la figura, añadir una descripción o hacer referencia a ella en el texto, debemos incluir la figura dentro de un entorno figure:
+
+	\com{begin\{figure\}}
+
+		\com{includegraphics[opciones]\{imagen\}}
+
+	\com{end\{figure\}}
+
+Una vez declarado el entorno figure podemos indicar dónde queremos que se muestre la figura. Las opciones principales:
+\begin{itemize}
+\item h (here): para mostrar la imagen aproximadamente en el mismo lugar donde se inserta.
+
+\item b (bottom): mostrarla en la parte inferior de la página.
+
+\item t (top): la muestra en la parte superior de la página.
+
+\item p (page): muestra la imagen en otra página.
+
+\item ¡: para forzar la posición indicada ignorando las reglas de LaTex.
+\end{itemize}
+
+También es posible combinar distintas opciones. Dentro del entorno figure podemos definir una descripción para que aparezca debajo de la figura mediante el comando \com{caption}. Si quieres que la descripción aparezca en la parte superior de la imagen solo tienes que escribir el comando \com{caption} antes de \com{includegraphics}.
+
+Podemos definir una etiqueta mediante el comando \com{label} para poder referenciar la figura en algún punto del texto. También podemos indicar dentro del entorno figure si la figura debe mostrarse centrada, alineada a la izquierda o a la derecha incluyendo el comando correspondiente antes de \com{includegraphics}:
+
+	\com{centering} \incom{\%Figura centrada.}
+
+    \com{raggedleft} \incom{\%Figura alineada a la derecha.}
+
+	\com{raggedright} \incom{\%Figura alineada a la izquierda.}
+
+Por ejemplo:
+
+    \com{begin\{figure\}[htb]}
+
+		\com{centering}
+
+		\com{includegraphics\{imagen\}}
+
+	\com{end\{figure\}}
+
+De este modo mostrará la figura de forma centrada. En algunos casos es necesario incluir una serie de imágenes en un documento para que aparezcan más o menos juntas. En estas ocasiones existe el entorno subfigure, accesible a partir del paquete subcaption.
+
+\section{Listas y enumeraciones}
+
+Para crear listas y enumeraciones en LaTeX tenemos los comandos itemize y enumerate. Su funcionamiento es muy simple, solo hay que crear el entorno e indicar cada elemento de una lista con el comando \com{item}. El entorno itemize crea ítems indicados con un símbolo distintivo mientras que el entorno enumerate crea listas ordenadas con números.
+
+Ejemplo:
+
+	\com{begin\{itemize\}}
+
+		\com{item} \incol{Enanas blancas}
+
+		\com{item} \incol{Estrellas de Wolf--Rayet}
+
+		\com{item} \incol{Gigantes azules}
+
+		\com{item} \incol{Estrellas de neutrones}
+
+	\com{end\{itemize\}}
+
+Resultado:
+
+	\begin{itemize}
+		\item \outcol{Enanas blancas}
+		\item \outcol{Estrellas de Wolf--Rayet}
+		\item \outcol{Gigantes azules}
+		\item \outcol{Estrellas de neutrones}
+	\end{itemize}
+
+La misma lista puede crearse exactamente de la misma forma pero dentro de un entorno enumerate para darle un orden numérico:  
+
+\com{begin\{enumerate\}}
+
+También es posible combinar los dos tipos de listado:
+
+	\com{begin\{itemize\}}
+
+		\com{item} \incol{Estrellas enanas}
+
+		\com{begin\{enumerate\}}
+
+			\com{item} \incol{Enanas blancas}
+
+			\com{item} \incol{Enanas amarillas}
+
+			\com{item} \incol{Enanas rojas}
+
+		\com{end\{enumerate\}}
+
+		\com{item} \incol{Estrellas gigantes}
+
+		\com{item} \incol{Estrellas hipergigantes}
+
+		\com{item} \incol{Estrellas de neutrones}
+
+	\com{end\{itemize\}}
+
+Resultado:
+
+	\begin{itemize}
+		\item \incol{Estrellas enanas}
+		\begin{enumerate}
+			\item \incol{Enanas blancas}
+			\item \incol{Enanas amarillas}
+			\item \incol{Enanas rojas}
+		\end{enumerate}
+		\item \incol{Estrellas gigantes}
+		\item \incol{Estrellas hipergigantes}
+		\item \incol{Estrellas de neutrones}
+	\end{itemize}
+
+No hay ningún problema en incluir el mismo tipo de entorno dentro de otro entorno a un nivel superior, podemos crear un entorno enumerate dentro de otro entorno enumerate.
+
+LaTex asigna automáticamente un tipo de enumeración diferente a cada nivel. El primer nivel se indica con números seguidos de punto, el segundo nivel con letras seguidas de paréntesis, el tercer nivel aparecería con números seguidos de paréntesis y el cuarto nivel con letras seguidas de coma volada.
+
+De forma similar, el entorno itemize asigna símbolos distintos a cada nivel, siendo el primer nivel un cuadrado, el segundo un círculo negro, el tercero un círculo vacío y el cuarto un rombo.
+
+Las etiquetas y símbolos que aparecen automáticamente en este tipo de listas pueden redefinirse mediante el comando \com{renewcommand}.
+
+En el caso del entorno enumerate, dependiendo del nivel que queramos cambiar tenemos que reescribir el comando \com{theenumi}, \com{theenumiii} o \com{theenumiv}, para el primer, segundo, tercer y cuarto nivel, respectivamente. Podemos escoger utilizar números arábigos, romanos en minúscula o mayúscula, letras minúsculas o mayúsculas.
+
+Aparte de cambiar el tipo de numeración también es posible modificar el tipo de etiqueta que se aplica. Es decir, si queremos que se muestre un punto, un paréntesis, una coma volada y dependiendo del nivel debemos redefinir los comandos \com{labelenumi}, \com{labelenumii}, \com{labelenumiii} y \com{labelenumiv}. Por ejemplo, para mostrar un paréntesis en el primer nivel:
+
+\com{renewcommand\{labelenumi\}\{\{\com{theenumi}\}\}\}}
+
+Y para mostras dos puntos:
+
+\com{renewcommand\{\com{labelenumi}\}\{\{\com{theenumi}\}\}}
+
+\section{Índices y referencias}
+
+\subsection{Índice de contenidos}
+
+Crear un índice de contenidos es un proceso automático si se ha definido correctamente la estructura del documento utilizando los comandos para ello.
+
+Los comandos principales para estructurar el documento son \com{section}, \com{subsection} y \com{subsubsection}. Si además trabajamos en un documento de clase book o report, podemos añadir también capítulos con \com{chapter} y partes con \com{part}.
+
+Creada la estructura podemos crear el índice de contenidos simplemente con el comando \com{tableofcontents}.
+
+Dependiendo del programa que utilices para crear los archivos en LaTeX es posible que necesites compilar más de una vez para que el índice de contenidos aparezca actualizado.
+
+En la jerarquía introducida con los comandos \com{chapter}, \com{section}, etc. cada elemento ocupa un nivel distinto.
+\begin{itemize}
+\item Nivel 0: capítulos
+\item Nivel 1: secciones
+\item Nivel 2: subsecciones
+\item Nivel 3: subsubsecciones
+\item Nivel 4: párrafos
+\item Nivel 5: subpárrafos
+\end{itemize}
+
+Por defecto, LaTeX muestra en el índice de contenidos solo los títulos hasta un nivel 2, es decir, incluye las subsecciones, pero no las subsubsecciones. Este parámetro se modifica con el comando: \com{setcounter\{tocdepth\}\{\incol{X}\}}, donde X indica el nivel de detalle que queremos mostrar en el índice de contenidos. Con el comando \com{setcounter\{tocdepth\}\{0\}}, únicamente ser mostrarán los nombres de los capítulos.
+
+Podemos crear de modo similar un índice de figuras con el comando \com{listoffigures}, pero para que esto funcione es necesario haber asignado primero una leyenda a las imágenes que queremos que aparezcan en el índice de figuras. Esto debe hacerse con el comando \com{caption}.
+
+El índice de tablas puede crearse con el comando \com{listoftables}, siendo también necesario haber definido una leyenda para todas las tablas que queremos que aparezcan en el índice mediante el comando \com{caption}.
+
+\subsection{Bibliografías}
+
+Actualmente, la forma más simple y eficiente de almacenar y citar una serie de fuentes bibliográficas en LaTeX es mediante el paquete biblatex. Existen muchas opciones para gestionar la bibliografía. Para gestionar las referencias de un documento hacen falta tres elementos:
+\begin{itemize}
+\item Base de datos de las referencias
+\item Programa para procesar la información bibliográfica
+\item Paquete para dar formato a la bibliografía
+\end{itemize}
+
+El primer paso para gestionar la bibliografía es crear un archivo donde guardar toda la información sobre las referencias que se van a citar. Este archivo contiene una entrada distinta para cada fuente bibliográfica. Por ejemplo, si queremos citar un artículo científico podemos guardar su información dentro de un archivo .bib. Se indicará mediante el parámetro @article, @book para libros y @inproceedings para las actas de sesiones de una conferencia. El tipo de elemento que se escoja da acceso a distintos atributos que pueden o deben ser definidos.
+
+En el caso del artículo científico es obligatorio definir el nombre del autor (autor), el título del artículo (title), el nombre de la revista que lo ha publicado (journal) y el año de publicación. Opcionalmente pueden definirse también el volumen (volumen), el número (number), las páginas del artículo (pages), el mes de publicación (month) y añadir alguna nota aclaratoria (note).
+
+Todos los atributos se escriben dentro de las llaves definidas con @article \{\}. La estructura siempre debe ser primero la palabra clase (e.g. autor) seguida del signo igual y a continuación el valor concreto. Es importante delimitar el valor entre algún símbolo especial, tanto llaves como comillas. También es necesario escribir una coma al final de cada fila. Cuando hay dos o más autores es importante separar cada autor con la palabra and. 
+
+Otro elemento esencial es la etiqueta asociada con cada fuente. Esta se escribe inmediatamente después de abrir las llaves después de indicar el tipo de fuente bibliográfica. 
+
+Puedes editar el archivo .bib con cualquier programa de edición de texto. En Windows es suficiente con el bloc de notas. En caso de tener que gestionar un gran número de referencias bibliográficas, existen programas que facilitan esta tarea ( Mendeleym, JabRef o Zotero).
+
+Una vez creado el documento .bib ya podemos cargarlo en nuestro documento LaTeX para citar las fuentes que contiene. Ejemplo muy básico de documento en LaTeX con bibliografía:
+
+	\com{documentclass\{article\}}
+
+	\com{usepackage[spanish]\{babel\}}
+
+	\com{usepackage[utf8]\{inputenc\}}
+
+	\com{usepackage[backend=biber]\{biblatex\}}
+
+	\com{bibliography\{referencias\}}
+
+	\com{begin\{document\}}
+
+\incol{El determinismo mecanicista de la obra Traité de Mécanique Céleste \com{cite\{\incol{laplace1}\}} de Laplace empezaba a mostrar las limitaciones de toda una época de pensadores.}
+
+	\com{printbibliography}
+
+	\com{end\{document\}}
+
+El primer comando importante es para cargar el paquete biblatex. En este ejemplo hemos especificado que se utilice biber como programa de procesado de la bibliografía (backend=biber).
+
+Después de cargar el paquete biblatex se especifica la base de datos de las fuentes bibliográficas con \com{bibliography\{referencias\}}. En el ejemplo, las referencias están guardadas en un archivo llamado referencias .bib, pero no es necesario escribir la extensión .bib.
+
+Dentro del entorno documento, podemos citar cualquier fuente guardada dentro del archivo .bib con el comando \com{cite} y la etiqueta de la fuente entre llaves. En este caso, citamos a la fuente \outcol{laplace1} con \com{cite\{\incol{laplace1}\}}. El símbolo \~ antes del comando \com{cite} indica que debe haber un espacio entre la última palabra y la cita, pero a la vez evitar un salto de línea entre los dos elementos.
+
+Finalmente utilizamos el comando \com{printbibliography} para listar todas las fuentes que se han citado a lo largo del documento.
+
+Pueden surgir problemas en el momento de compilar. Para crear el documento final es necesario primero ejecutar pdflatex, después biber y después otra vez pdflatex para que se actualice la lista de bibliografía. Si utilizas Texworks en Windows debes hacer esta selección manualmente antes de compilar.
+
+Otros programas, entre ellos texstudio, se hacen cargo de este proceso automáticamente y solo requieren que compiles el documento un par de veces.
+
+Si compilas a través de la terminal puedes aplicar este proceso mediante: 
+
+\incol{pdflatex archivo.tex}
+
+\incol{biber archivo}
+
+\incol{pdflatex archivo.tex}
+
+Hay tres parámetros importantes para definir el estilo de la bibliografía: el estilo en el que se citan las fuentes, el estilo de la lista de bibliografía y el orden de la bibliografía.
+
+Las opciones más habituales para las referencias que aparecen en el texto son utilizar números ([1],[2],\dots), utilizar códigos alfanuméricos ([Sch43], [Sha48],\dots) o citar directamente los autores principales y el año (e.g. Einstein 1915). También es posible mostrar solo los autores o solo el año. Este parámetro se especifica en las opciones del paquete biblatex con el argumento citestyle:
+
+	\com{usepackage[backend=biber,citestyle=numeric]\{biblatex\}}
+
+	\com{usepackage[backend=biber,citestyle=alphabetic]\{biblatex\}}
+
+	\com{usepackage[backend=biber,citestyle=authoryear]\{biblatex\}}
+
+El otro parámetro importante es el estilo de las fuentes en la lista bibliográfica. De forma similar al estilo de citación existe la opción numeric, alphabetic y authoryear. Este estilo se especifica mediante el argumento style:
+
+	\com{usepackage[backend=biber,style=numeric]\{biblatex\}}
+
+	\com{usepackage[backend=biber,style=alphabetic]\{biblatex\}}
+
+	\com{usepackage[backend=biber,style=authoryear]\{biblatex\}}
+	
+También es posible utilizar estilos de bibliografía determinados por organizaciones como, el formato APA (American Psychological Association) o el de IEEE (Institute of Electrical and Electronics Engineers):
+
+	\com{usepackage[backend=biber,style=apa]\{biblatex\}}
+	
+	\com{sepackage[backend=biber,style=ieee]\{biblatex\}}
+	
+Un detalle importante es especificar el orden en que queremos que se muestre la lista de bibliografía. Este parámetro se especifica mediante el argumento sorting. Las opciones más habituales son mostrar la lista en el mismo orden en el que las fuentes aparecen en el texto (sorting=none), mostrarlas según el orden cronológico de publicación (sorting=ynt) o alfabéticamente según el nombre de los autores (sorting=nyt).
+
+Utilizando el paquete biblatex, la forma de añadir una página web como bibliografía es mediante el elemento @online en el archivo .bib.
+
+Si además añades el paquete hyperref en el preámbulo del documento puede convertir la url que aparece en la bibliografía en un link que se abre en el navegador.
+
+Por defecto, la bibliografía no aparece en el índice de contenidos. Si quieres que aparezca lo especificarás en el comando \com{printbibliography}: \com{printbibliography[heading=bibintoc]}
+
+Si quieres cambiar el título de la bibliografía por cualquier otra palabra: \com{printbibliography[title=\{Bibliografía\}]}.
+
+\subsection{Referencias cruzadas}
+
+Una de las grandes ventajas de trabajar con LaTeX es la facilidad con la que se pueden gestionar las referencias cruzadas a los elementos del documento: imágenes, gráficas, tablas, ecuaciones.
+
+Los dos comandos necesarios para crear una referencia son \com{label} para crear una etiqueta y \com{ref} para referenciarla.
+
+El comando \com{label} debe ser llamado dentro del entorno correspondiente al elemento que queremos referenciar. Este puede ser el entorno figure para una imagen, table para una tabla o equation para una ecuación.
+
+Para mantener un cierto orden entre todas las etiquetas de un documento se recomienda nombrar las etiquetas correspondientes a imágenes empezando con fig:, tab: para las tablas, eq: para ecuaciones, ch: para capítulos y sec: para secciones.
+
+En ocasiones puede ser necesario citar también la página donde se encuentra un elemento en concreto, se hará con el mismo sistema pero utilizando el comando \com{pageref} en lugar de \com{ref}.
+
+Si además de la referencia quieres añadir un link que te traslade al elemento referenciado se debe cargar el paquete hyperref.
+
+Si quieres mostrar los links pero evitar que aparezca el borde de color característico de un link en el pdf: \com{usepackage[hidelinks]\{hyperref\}}.
+
+\section{Contenidos marginales}
+
+\subsection{Notas al pie}
+
+Para notas al pie de página LaTeX incorpora el comando \com{footnote}. Solamente tenemos que escribir este comando seguido del texto entre llaves que queremos que aparezca al pie de página.
+
+	\com{documentclass\{article\}}
+
+	\com{usepackage[spanish]\{babel\}}
+
+	\com{usepackage[utf8]\{inputenc\}}
+
+	\com{begin\{document\}}
+
+	       \incol{Las notas al pie son útiles para añadir detalles interesantes \com{footnote\{\incol{Detalles interesantes}\}}. A veces estos detalles resultan ser irrelevantes \com{footnote\{ \incol{Detalles irrelevantes}\}}.}
+	   
+    \com{end\{document\}}
+	       
+Por defecto las notas al pie de página aparecen ordenadas en números arábigos. Si se desea utilizar números romanos o letras tenemos que añadir los comandos correspondientes en el preámbulo del documento.
+\begin{itemize}
+\item Números romanos: \com{renewcommand\{\com{thefootnote}\}\{Roman\{footnote\}\}}
+
+\item Letras minúsculas: \com{renewcommand\{\com{thefootnote}\}\{\com{alph}\{footnote\}\}}
+
+\item Letras mayúsculas: \com{renewcommand\{\com{thefootnote}\}\{\com{Alph}\{footnote\}\}}
+
+\item Insertar un símbolo distinto para cada nota: \com{renewcommand\{\com{thefootnote}\}\{\com{fnsymbol}\{ footnote\}\}}
+\end{itemize}
+
+Para que las notas aparezcan al final del documento y no al pie de página se usa el paquete endnotes en vez de \com{footnote}. Después se inserta en el punto donde quieres que aparezcan todas las notas el comando \com{theendnotes}.
+
+Aunque hayas cargado el paquete babel en español, el paquete endnotes muestra todas las notas bajo el título en inglés Notes, para traducir este título hay que incluir el un comando en el preámbulo del documento: \com{renewcommand\{\com{notesnam}\}\{Notas\}}
+
+Es interesante saber que se puede reescribir manualmente el número de las notas al pie de página. Para ello tienes que indicar el número que desees entre corchetes junto con el comando \com{footnote}.
+
+\subsection{Encabezado y pie de página}
+
+Existen principalmente dos opciones para dar formato al encabezado y pie de página de un documento escrito en LaTex.
+
+La opción más sencilla no requiere ningún paquete adicional y consiste únicamente en definir un estilo de página en el preámbulo mediante el comando \com{pagestyle}. Con este comando podemos escoger entre cuatro estilos diferentes para el encabezado y pie de página:
+\begin{itemize}
+\item \com{pagestyle\{empty\}}, el encabezado y pie de página aparecen totalmente vacíos.
+
+\item \com{pagestyle\{plain\}}, es el estilo que aparece por defecto. Incluye únicamente el número de página centrado en el pie de página.
+
+\item \com{pagestyle\{headings\}}, muestra el número de página y títulos de capítulos o secciones. La distribución de estos elementos depende de la clase de documento. Normalmente incluye el número de página situado a la derecha del encabezado y el título del capítulo o sección a la izquierda.
+
+\item \com{pagestyle\{myheadings\}}, este estilo es equivalente al headings pero permite definir el texto que aparece en el encabezado. Para definir los encabezados con este estilo hay que tener en cuenta si el documento está configurado para impresión a una o dos caras:
+
+\item \com{documentclass[twoside]\{article\}}, impresión a una cara.
+
+\item \com{documentclass[oneside]\{book\}}, impresión a dos caras.
+\end{itemize}
+
+Si el documento es a una cara, el encabezado será el mismo en todas las páginas, caso en el podemos definir el texto del encabezado dentro del estilo myheadings:
+
+    \com{markright\{texto en el encabezado\}}
+
+Cuando el documento es a dos caras podemos definir un encabezado para las páginas pares y otro para las impares: \com{markboth\{texto página izquierda\}\{texto página derecha\}}.
+
+Si las opciones básicas no son suficientes para generar el tipo de encabezado que se quiere, será necesario utilizar alguna de las opciones que ofrece el paquete fancyhdr.
+
+\section{Tipografía}
+
+\subsection{Tipo de letra}
+
+En general, en un entorno LaTeX puede distinguirse entre tres familias de letras: roman (por defecto, con remates o serifas), sans serif (sin serifas, letra palo seco) y teletype (tipo máquina de escribir).
+
+	\com{textrm\{\incol{\textrm{Texto escrito en familia roman}}\}}
+
+	\com{textsf\{\incol{\textsf{Texto escrito en familia sans serif}}\}}
+
+	\com{texttt\{\incol{\texttt{Texto escrito en familia de mecanografiado}}\}}
+
+Es importante escribir entre llaves el texto correspondiente. En caso de querer cambiar la familia de forma permanente pueden utilizarse estos comandos: \com{rmfamily}, \com{sffamily}, \com{ttfamily}. El texto escrito después de estos comandos aparece en la familia indicada hasta el punto en que se indique una instrucción alternativa con otro de los comandos presentados:
+
+	\com{rmfamily}
+
+	\incol{\textrm{Aquí el texto aparece en el estilo de la familia roman}}
+
+	\com{sffamily}
+
+	\incol{\textsf{A partir de este punto el texto es sans serif}}
+
+	\com{ttfamily}
+
+	\incol{\texttt{Por último, tenemos texto de tipo mecanografiado}}
+
+También es posible utilizar distintas formas de letras. Por defecto las letras aparecen rectas, pero podemos cambiarlas a distintas formas de cursiva, mayúsculas, etc.
+
+	\com{textit\{\incol{\textit{Texto escrito en cursiva}}\}}
+
+	\com{textup\{\incol{\textup{Texto escrito en letras rectas}}\}}
+
+	\com{textsl\{\incol{\textsl{Texto roman de estilo inclinado}}\}}
+
+	\com{textsc\{\incol{\textsc{Texto escrito en mayúsculas pequeñas}}\}}
+
+De forma similar podemos utilizar los cuatro siguientes comandos para cambiar la forma de la letra a partir de un punto determinado: \com{itshape}, \com{upshape}, \com{slshape} y \com{scshape}.
+
+Para forzar que las letras aparezcan en mayúscula:
+
+ \com{uppercase\{\incol{\uppercase{Este texto aparecerá en mayúscula}}\}}
+
+Para determinar el grosor del trazo de las letras:
+
+	\com{textbf\{\incol{\textbf{Texto en negrita}}\}}
+
+	\com{textmd\{\incol{\textmd{Texto de grosor intermedio}}\}}
+
+Para cambiar a un entorno con este tipo de letras podemos utilizar: \com{bfseries} y \com{mdseries}.
+
+Existe el comando \com{emph\{\}} para crear texto que aparece de alguna forma enfatizado, normalmente el texto enfatizado aparece en cursiva. Las características del enfatizado dependen en última instancia de la configuración y tipo de fuente utilizado en el documento.
+
+En caso de querer resaltar un texto mediante un subrayado se utilizará el comando \com{ul\{\}} disponible mediante el paquete soul: 
+
+	\com{usepackage\{soul\}}
+	
+	\incol{Estas definiciones son \com{ul\{\incol{muy importantes}\}}.}
+
+Dentro del modo matemático a menudo es necesario escribir letras con algún tipo de fuente distinto al habitual. Las opciones más utilizadas en estos casos son:
+\begin{itemize}
+\item Letras caligráficas: \$\com{mathcal\{R\}}\$ ($\mathcal{R}$).
+
+\item Letras negritas de pizarra ($\mathbb{R}$) con el comando \com{mathbb} (requiere \com{usepackage\{amssymb\}}).
+
+\item Letras Fraktur ($\mathfrak{R}$) con el comando \com{mathfrak} (requiere \com{usepackage\{amssymb\}}).
+
+\item Letras formales Ralph Smith ($\mathscr{R}$) con el comando \com{mathscr} (requiere \com{usepackage\{mathrsfs\}}).
+\end{itemize}
+
+\subsection{Tamaño de letra}
+
+El tamaño de la fuente en un documento en LaTeX se define en relación al tamaño definido en el documento. Por defecto, un documento en LaTeX está definido con un tamaño de letra de 10 pt.
+
+Podemos especificar otro tamaño inicial al declarar la clase de documento mediante:   
+
+\com{documentclass[12pt]\{article\}}
+
+En relación a este tamaño podemos definir otros tamaños de letra mediante los siguientes comandos:
+\begin{itemize}
+\item \com{tiny}: \incol{\{\com{tiny} \tiny{Texto en tamaño tiny}\}}
+\item \com{scriptsize}: \incol{\{\com{scriptsize} \scriptsize{Texto en tamaño scriptsize}\}}
+\item \com{footnotesize}: \incol{\{\com{footnotesize} \footnotesize{Texto en tamaño footnotesize}\}}
+\item \com{normalsize}: \incol{\{\com{normalsize} \normalsize{Texto en tamaño normalsize}\}}
+\item \com{large}: \incol{\{\com{large} \large{Texto en tamaño large}\}}
+\item \com{Large}: \incol{\{\com{Large} \Large{Texto en tamaño Large}\}}
+\item \com{LARGE}: \incol{\{\com{LARGE} \LARGE{Texto en tamaño LARGE}\}}
+\item \com{Huge}: \incol{\{\com{Huge} \Huge{Texto en tamaño Huge}\}}
+\end{itemize}
+\end{document}
